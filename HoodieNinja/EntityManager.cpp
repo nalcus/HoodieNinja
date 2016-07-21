@@ -78,25 +78,36 @@ void    EntityManager::update(sf::Time deltaTime)
 
     // update camera
 
-    if (!mEntities.empty())
+    if (!mEntities.empty()) // check if there are any entities
     {
-        for (unsigned int i=mEntities.size()-1;i>0;i--)
+        for (unsigned int i=mEntities.size()-1;i>0;i--) // cycle through each entity
         {
-            if(mEntities.at(i)->getActive())
+            if(mEntities.at(i)->getActive()) // if the entity is active
             {
                 std::string Pl="PLAYER";
-                if(*mEntities.at(i)->getType()==Pl)
+                if(*mEntities.at(i)->getType()==Pl) // if entity is the player
                 {
+                    // initialize camera offset to zero
                     int newcamOffsetX=0;
                     int newcamOffsetY=0;
+                    
+                    // get the player's position
                     int playerX = mEntities.at(i)->getPosition()->x;
                      int playerY = mEntities.at(i)->getPosition()->y;
-                     int halfWidth = 0.5*TheGame::Instance()->getDisplayWidth();
+                    
+                    // get half the display width and height
+                    int halfWidth = 0.5*TheGame::Instance()->getDisplayWidth();
                      int halfHeight = 0.5*TheGame::Instance()->getDisplayHeight();
-                    newcamOffsetX=playerX-halfWidth;
-                    newcamOffsetY=playerY-halfHeight;
-                    int xMax=(TheMapManager::Instance()->getMapWidth()*32)-TheGame::Instance()->getDisplayWidth();
-                    int yMax=(TheMapManager::Instance()->getMapHeight()*32)-TheGame::Instance()->getDisplayHeight();
+                    
+                    // set the camera position to player position minus half the screen size
+                    newcamOffsetX=(playerX-halfWidth);
+                    newcamOffsetY=(playerY-halfHeight);
+                    
+                    // the maximum offset should not extend past the map
+                    int xMax=(TheMapManager::Instance()->getMapWidth()*32)-(TheGame::Instance()->getDisplayWidth());
+                    int yMax=(TheMapManager::Instance()->getMapHeight()*32)-(TheGame::Instance()->getDisplayHeight());
+                    
+                    // the minimum offset should not be less than zerto
                     if (newcamOffsetX<0) {newcamOffsetX=0;}
                     if (newcamOffsetY<0) {newcamOffsetY=0;}
 
@@ -104,8 +115,9 @@ void    EntityManager::update(sf::Time deltaTime)
                     if (newcamOffsetY>yMax) {newcamOffsetY=yMax;}
 
 
-                      TheGame::Instance()->mCameraOffset.x=newcamOffsetX;
-                        TheGame::Instance()->mCameraOffset.y=newcamOffsetY;
+                    // assign map offset to game instance
+                    TheGame::Instance()->mCameraOffset.x=newcamOffsetX;
+                    TheGame::Instance()->mCameraOffset.y=newcamOffsetY;
 
 
 

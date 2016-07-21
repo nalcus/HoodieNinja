@@ -54,6 +54,7 @@ private:
     static const int DisplayHeight;
     static const bool Fullscreen;
     static const bool VSync;
+    static const int Scale; 
 
     sf::RenderWindow mWindow;
     sf::RenderTexture mRenderTexture;

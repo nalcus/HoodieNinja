@@ -35,6 +35,17 @@
 		A3D770691D382C2B004CE5FF /* Projectile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Projectile.cpp; sourceTree = "<group>"; };
 		A3D7706A1D382C2B004CE5FF /* Randomizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Randomizer.cpp; sourceTree = "<group>"; };
 		A3D770731D382C5D004CE5FF /* tinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml2.cpp; sourceTree = "<group>"; };
+		A3D7E3731D4130A900E01B49 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		A3D7E3741D4130A900E01B49 /* EntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityManager.h; sourceTree = "<group>"; };
+		A3D7E3751D4130A900E01B49 /* frameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frameData.h; sourceTree = "<group>"; };
+		A3D7E3761D4130A900E01B49 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		A3D7E3771D4130A900E01B49 /* MapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
+		A3D7E3781D4130A900E01B49 /* NPCEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPCEntity.h; sourceTree = "<group>"; };
+		A3D7E3791D4130A900E01B49 /* PlayerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEntity.h; sourceTree = "<group>"; };
+		A3D7E37A1D4130A900E01B49 /* Projectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projectile.h; sourceTree = "<group>"; };
+		A3D7E37B1D4130A900E01B49 /* Randomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Randomizer.h; sourceTree = "<group>"; };
+		A3D7E37C1D4130A900E01B49 /* StringHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelp.h; sourceTree = "<group>"; };
+		A3D7E37D1D4130A900E01B49 /* tinyxml2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml2.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +99,17 @@
 		A3D7704C1D382247004CE5FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A3D7E3731D4130A900E01B49 /* Entity.h */,
+				A3D7E3741D4130A900E01B49 /* EntityManager.h */,
+				A3D7E3751D4130A900E01B49 /* frameData.h */,
+				A3D7E3761D4130A900E01B49 /* Game.h */,
+				A3D7E3771D4130A900E01B49 /* MapManager.h */,
+				A3D7E3781D4130A900E01B49 /* NPCEntity.h */,
+				A3D7E3791D4130A900E01B49 /* PlayerEntity.h */,
+				A3D7E37A1D4130A900E01B49 /* Projectile.h */,
+				A3D7E37B1D4130A900E01B49 /* Randomizer.h */,
+				A3D7E37C1D4130A900E01B49 /* StringHelp.h */,
+				A3D7E37D1D4130A900E01B49 /* tinyxml2.h */,
 				A3D7704D1D382247004CE5FF /* HoodieNinja-Info.plist */,
 			);
 			name = "Supporting Files";

@@ -13,10 +13,11 @@
 const float Game::PlayerSpeed = 100.f;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f/60.f);
 
-const int Game::DisplayWidth = 800;
-const int Game::DisplayHeight = 600;
+const int Game::DisplayWidth = 1280;
+const int Game::DisplayHeight = 800;
 const bool Game::Fullscreen = false;
-const bool Game::VSync = false;
+const bool Game::VSync = true;
+const int Game::Scale = 1;
 
 bool checkDocError (tinyxml2::XMLDocument &rDoc)
 {
@@ -30,8 +31,10 @@ bool checkDocError (tinyxml2::XMLDocument &rDoc)
 
 Game* Game::s_pInstance = 0;
 
+
+
 Game::Game()
-    : mWindow(sf::VideoMode(DisplayWidth, DisplayHeight), "gameFrame", (Fullscreen)?sf::Style::Fullscreen:sf::Style::Close)
+    : mWindow(sf::VideoMode(DisplayWidth, DisplayHeight), "HoodieNinja", (Fullscreen)?sf::Style::Fullscreen:sf::Style::Close)
     , mNPCTexture()
     , mPlayerTexture()
     , mTileset()
@@ -43,12 +46,16 @@ Game::Game()
     , mStatisticsNumFrames(0)
 {
 
+    // set vsync to user setting
     mWindow.setVerticalSyncEnabled(VSync);
 
+    // make sure the mouse cursor is not visible
     mWindow.setMouseCursorVisible(false);
 
+    // reseed random number generator
     reseedRandomizer();
 
+    // set camera offset
     mCameraOffset=sf::Vector2f(0,0);
 
     mRenderTexture.create(DisplayWidth, DisplayHeight);
@@ -171,6 +178,7 @@ void Game::updateStatistics(sf::Time elapsedTime)
 
 void Game::update(sf::Time deltaTime)
 {
+    // update each game entity by time slice
     TheEntityManager::Instance()->update(deltaTime);
 }
 
