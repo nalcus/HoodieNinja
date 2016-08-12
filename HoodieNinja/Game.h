@@ -42,6 +42,8 @@ public:
 
     int getDisplayWidth() {return DisplayWidth;}
     int getDisplayHeight() {return DisplayHeight;}
+    int getScaledDisplayWidth() {return DisplayWidth/Scale;}
+    int getScaledDisplayHeight() {return DisplayHeight/Scale;}
     int getFullScreen() {return Fullscreen;}
 
      sf::Vector2f mCameraOffset;

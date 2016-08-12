@@ -17,7 +17,7 @@ const int Game::DisplayWidth = 1280;
 const int Game::DisplayHeight = 800;
 const bool Game::Fullscreen = false;
 const bool Game::VSync = true;
-const int Game::Scale = 1;
+const int Game::Scale = 2;
 
 bool checkDocError (tinyxml2::XMLDocument &rDoc)
 {
@@ -89,7 +89,7 @@ Game::Game()
     mFont.loadFromFile("assets/04B_25__.TTF");
     mStatisticsText.setFont(mFont);
     mStatisticsText.setColor(sf::Color::White);
-    mStatisticsText.setPosition(25.f, DisplayHeight-75.f);
+    mStatisticsText.setPosition(24.f, DisplayHeight-74.f);
     mStatisticsText.setCharacterSize(20);
 
     // add NPCs
@@ -200,7 +200,7 @@ void Game::render()
     mRenderTexture.display();
 
     // set the rendersprite scale
-    mRenderSprite.setScale(1.f,1.f);
+    mRenderSprite.setScale(1,1);
 
     // draw the rendersprite to the main window
     mWindow.draw(mRenderSprite);

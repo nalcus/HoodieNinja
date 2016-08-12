@@ -32,6 +32,7 @@ MapManager::MapManager()
         return;
     }
 
+    // get the width and height of the map
     mapElement->QueryIntAttribute( "width", &mMapWidth );
     mapElement->QueryIntAttribute( "height", &mMapHeight );
 
